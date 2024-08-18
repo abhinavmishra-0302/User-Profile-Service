@@ -1,6 +1,6 @@
 package com.example.user_profile_service.controller;
 
-import com.example.user_profile_service.models.UserProfile;
+import com.example.user_profile_service.entity.UserProfile;
 import com.example.user_profile_service.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

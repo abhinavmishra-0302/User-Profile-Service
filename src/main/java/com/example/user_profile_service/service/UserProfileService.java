@@ -1,7 +1,6 @@
 package com.example.user_profile_service.service;
 
-import com.example.user_profile_service.enums.UserTypes;
-import com.example.user_profile_service.models.UserProfile;
+import com.example.user_profile_service.entity.UserProfile;
 import com.example.user_profile_service.repository.UserProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,25 +26,6 @@ public class UserProfileService {
         user.setEmail(userProfile.getEmail());
         user.setPhoneNumber(userProfile.getPhoneNumber());
         user.setProfilePictureUrl(userProfile.getProfilePictureUrl());
-
-        if (user.getUserTypes() == UserTypes.JOB_SEEKERS){
-            user.setHeadline(userProfile.getHeadline());
-            user.setCurrentPosition(userProfile.getCurrentPosition());
-            user.setCompany(userProfile.getCompany());
-            user.setProfessionalSummary(user.getProfessionalSummary());
-            user.setResumeUrl(user.getResumeUrl());
-        }
-
-        else {
-            user.setCompanyName(userProfile.getCompanyName());
-            user.setCompanyDescription(userProfile.getCompanyDescription());
-            user.setCompanyWebsite(userProfile.getCompanyWebsite());
-            user.setIndustry(userProfile.getIndustry());
-            user.setCompanySize(userProfile.getCompanySize());
-            user.setHeadquarters(userProfile.getHeadquarters());
-            user.setEmployerRole(userProfile.getEmployerRole());
-            user.setCompanyLogoUrl(userProfile.getCompanyLogoUrl());
-        }
 
         return userProfileRepository.save(user);
     }

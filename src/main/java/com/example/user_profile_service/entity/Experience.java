@@ -1,6 +1,5 @@
-package com.example.user_profile_service.models;
+package com.example.user_profile_service.entity;
 
-import com.example.user_profile_service.models.UserProfile;
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -20,8 +19,8 @@ public class Experience {
     private String jobDescription;
 
     @ManyToOne
-    @JoinColumn(name = "user_profile_id")
-    private UserProfile userProfile;
+    @JoinColumn(name = "job_seeker_profile_id")
+    private JobSeekerProfile jobSeekerProfile;
 
     public Long getId() {
         return id;
@@ -77,13 +76,5 @@ public class Experience {
 
     public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
-    }
-
-    public UserProfile getUserProfile() {
-        return userProfile;
-    }
-
-    public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
     }
 }

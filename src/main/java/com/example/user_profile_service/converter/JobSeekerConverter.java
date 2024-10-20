@@ -28,6 +28,7 @@ public class JobSeekerConverter {
 
     public JobSeekerProfileDto convertToDTO(JobSeekerProfile entity) {
         JobSeekerProfileDto dto = new JobSeekerProfileDto();
+        dto.setId(entity.getId());
         dto.setFirstName(entity.getFirstName());
         dto.setLastName(entity.getLastName());
         dto.setUsername(entity.getUsername());

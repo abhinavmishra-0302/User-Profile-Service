@@ -35,9 +35,19 @@ public class JobSeekerProfileService {
         return converter.convertToDTO(updatedProfile);
     }
 
-    public JobSeekerProfileDto getJobSeekerProfile(Long id) {
+    public JobSeekerProfileDto getJobSeekerProfileById(Long id) {
         JobSeekerProfile jobSeekerProfile = jobSeekerProfileRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Job Seeker profile not found"));
+        return converter.convertToDTO(jobSeekerProfile);
+    }
+
+    public JobSeekerProfileDto getJobSeekerProfilesByUsername(String username) {
+        JobSeekerProfile jobSeekerProfile = jobSeekerProfileRepository.findJobSeekerProfileByUsername(username);
+
+        if (jobSeekerProfile == null) {
+            throw new RuntimeException("Job Seeker profile not found");
+        }
+
         return converter.convertToDTO(jobSeekerProfile);
     }
 

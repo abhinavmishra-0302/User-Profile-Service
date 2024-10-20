@@ -5,6 +5,7 @@ import java.util.List;
 
 public class JobSeekerProfileDto {
 
+    private Long Id;
     private String firstName;
     private String lastName;
     private String username;
@@ -20,6 +21,14 @@ public class JobSeekerProfileDto {
     private String professionalSummary;
     private String resumeUrl;
     private List<String> skills;
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
 
     public String getFirstName() {
         return firstName;

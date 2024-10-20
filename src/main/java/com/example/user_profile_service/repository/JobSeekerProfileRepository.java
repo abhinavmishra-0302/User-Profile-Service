@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface JobSeekerProfileRepository extends JpaRepository<JobSeekerProfile, Long> {
-    JobSeekerProfile findByUsername(String username);
+    JobSeekerProfile findJobSeekerProfileByUsername(String username);
 }

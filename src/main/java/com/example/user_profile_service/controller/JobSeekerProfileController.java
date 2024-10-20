@@ -25,8 +25,13 @@ public class JobSeekerProfileController {
     }
 
     @GetMapping("/{id}")
-    public JobSeekerProfileDto getJobSeekerProfile(@PathVariable Long id) {
-        return jobSeekerProfileService.getJobSeekerProfile(id);
+    public JobSeekerProfileDto getJobSeekerProfileById(@PathVariable Long id) {
+        return jobSeekerProfileService.getJobSeekerProfileById(id);
+    }
+
+    @GetMapping("/username/{username}")
+    public JobSeekerProfileDto getJobSeekerProfileByUsername(@PathVariable String username) {
+        return jobSeekerProfileService.getJobSeekerProfilesByUsername(username);
     }
 
     @GetMapping
